@@ -1,0 +1,101 @@
+#family-tree-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#family-tree {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#family-tree li {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    cursor: pointer;
+}
+
+#family-tree li::before, #family-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+#family-tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+#family-tree li:only-child::after, #family-tree li:only-child::before {
+    display: none;
+}
+
+#family-tree li:only-child {
+    padding-top: 0;
+}
+
+#family-tree li:first-child::before, #family-tree li:last-child::after {
+    border: 0 none;
+}
+
+#family-tree li:last-child::before {
+    border-right: 1px solid #ccc;
+}
+
+#family-tree li:first-child::after {
+    border-left: 1px solid #ccc;
+}
+
+#family-tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+#family-tree li div {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.5s;
+    background-color: #fff;
+}
+
+#family-tree li div:hover {
+    background: #ddd;
+    color: #000;
+    border: 1px solid #aaa;
+}
+
+.spouse {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.spouse::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+}
